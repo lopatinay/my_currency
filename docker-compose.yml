@@ -1,0 +1,14 @@
+services:
+  db:
+    image: bitnami/postgresql:17
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+      POSTGRESQL_DATABASE: mycurrency
+      POSTGRESQL_USERNAME: mycurrency
+    volumes:
+      - db:/bitnami/postgresql
+    ports:
+      - "5400:5432"
+
+volumes:
+  db:
